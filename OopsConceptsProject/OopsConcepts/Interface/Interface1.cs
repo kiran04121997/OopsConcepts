@@ -1,15 +1,34 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OopsConcepts.Interface
+namespace Interface
 {
-
-    internal interface Interface1
+    // Interface
+    interface IAnimal
     {
-        void AnimalSound();
-        void Sleep();
+        void animalSound(); // interface method (does not have a body)
     }
-}  
+
+    // Pig "implements" the IAnimal interface
+    class Pig : IAnimal
+    {
+        public void animalSound()
+        {
+            // The body of animalSound() is provided here
+            Console.WriteLine("The pig says: wee wee");
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Pig myPig = new Pig();  // Create a Pig object
+            myPig.animalSound();
+            Console.ReadLine();
+        }
+    }
+}
